@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NightboundSystem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NightboundSystem_jar</output-path>
+    <root id="archive" name="NightboundSystem.jar">
+      <element id="module-output" name="NightboundSystem" />
+    </root>
+  </artifact>
+</component>

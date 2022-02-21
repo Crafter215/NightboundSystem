@@ -1,0 +1,27 @@
+name: NightboundSystem
+main: main.Main
+version: 0.0.2
+description: Das Plugin von Nightbound.de!
+
+commands:
+   fly:
+      description: Dieser Befehl erlaubt dir zu fliegen!
+      usage: /fly
+   gm:
+      description: Dieser befehl aendert deinen Spielmodus!
+      usage: /gm <1/2/3> <SPIELER>
+   tpo:
+      description: Dieser Befehl teleportiert dich zu einem Spieler!
+      usage: /tpo <SPIELER>
+   tpohere:
+      description: Dieser Befehl teleportiert einen Spieler zu dir!
+      usage: /tpohere <SPIELER>
+   setspawn:
+      description: Diser Befehel erlaubt es dir den Spawn zu setzen!
+      usage: /setspawn
+   spawn:
+      description: Dieser Befehel teleportiert dich zum Spawn!
+      usage: /spawn
+   about:
+      description: Dieser Befehel gibt dir Infos über das Plugin!
+      usage: /about
