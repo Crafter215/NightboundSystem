@@ -133,9 +133,7 @@ public class JoinListener implements Listener {
         objective.getScore("§3§l» Kontostand:").setScore(4);
         objective.getScore("0$").setScore(3);
         objective.getScore("§l ").setScore(2);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-       // ZonedDateTime date = ZonedDateTime.now();
-//        objective.getScore(GRAY + dtf.f(date)).setScore(1);
+
 
 
 
