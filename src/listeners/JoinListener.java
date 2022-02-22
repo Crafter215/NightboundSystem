@@ -27,6 +27,7 @@ import java.util.HashMap;
 
 import static listeners.InteractListener.PlayersHidden;
 import static main.Main.ServerPrefix;
+import static main.Main.updateScoreboard;
 import static org.bukkit.ChatColor.*;
 import static util.scoreboardUtil.setScoreboard;
 
@@ -68,7 +69,7 @@ public class JoinListener implements Listener {
         playerInv.setBoots(new ItemStack(Material.AIR));
 
 
-        // Set Player Health
+        // Set Player Health & Food
         plr.setMaxHealth(6);
         plr.setHealth(6);
 
@@ -128,12 +129,13 @@ public class JoinListener implements Listener {
         objective.getScore(Prefix.substring(0, Prefix.length()-4)).setScore(9);
         objective.getScore("§6 ").setScore(8);
         objective.getScore("§3§l» Online:").setScore(7);
-        objective.getScore("0/" + Bukkit.getMaxPlayers()).setScore(6);
+        objective.getScore( Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(6);
         objective.getScore("§5 ").setScore(5);
         objective.getScore("§3§l» Kontostand:").setScore(4);
         objective.getScore("0$").setScore(3);
         objective.getScore("§l ").setScore(2);
 
+        updateScoreboard(Bukkit.getOnlinePlayers().size() - 1, Bukkit.getOnlinePlayers().size());
 
 
 

@@ -11,6 +11,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.Scoreboard;
 
+import static listeners.JoinListener.scoreboards;
 import static org.bukkit.ChatColor.*;
 
 public class Main extends JavaPlugin {
@@ -43,7 +44,7 @@ public class Main extends JavaPlugin {
         pluginManager.registerEvents(new PlayerDropItemListener(), this);
         pluginManager.registerEvents(new PlayerSwapHandItemsListener(), this);
         pluginManager.registerEvents(new PlayerChatListener(), this);
-
+        pluginManager.registerEvents(new FoodListener(), this);
     }
 
     public static Main getPlugin(){
@@ -58,12 +59,22 @@ public class Main extends JavaPlugin {
         return ServerPrefix + RED + "Bitte benutze: " + GOLD + command.getUsage();
     }
 
+    public static void updateScoreboard(Integer OldAmount, Integer NewAmount){
+        for (Player all : Bukkit.getOnlinePlayers()){
+            Scoreboard board = scoreboards.get(all.getName());
+            board.resetScores(OldAmount + "/" + Bukkit.getMaxPlayers());
+            board.getObjective("abcd").getScore(Bukkit.getOnlinePlayers().size() + "/" + Bukkit.getMaxPlayers()).setScore(6);
+        }
+    }
+
     @Override
     public void onDisable() {
 
         for(Player all : Bukkit.getOnlinePlayers()){
             all.kickPlayer(ServerPrefix + "Der Server wird neugestartet.");
         }
+
+
 
 
     }
